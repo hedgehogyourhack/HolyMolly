@@ -1,0 +1,6 @@
+pl\aogiri\eventrio\mobile\User\User.class
+pl\aogiri\eventrio\mobile\Main.class
+pl\aogiri\eventrio\mobile\Event\EventController.class
+pl\aogiri\eventrio\mobile\Event\EventRepository.class
+pl\aogiri\eventrio\mobile\Event\Event.class
+pl\aogiri\eventrio\mobile\WebSecurityConfig.class
