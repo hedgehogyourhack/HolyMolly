@@ -26,7 +26,6 @@ public class User {
     @NotNull
     private int lvl;
 
-    @JsonFormat(pattern = "yyyy-MM-dd")
     private Instant birthday;
 
     public User() {

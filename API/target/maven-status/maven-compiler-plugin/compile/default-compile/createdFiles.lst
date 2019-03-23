@@ -4,6 +4,7 @@ pl\aogiri\eventrio\mobile\User\UserController.class
 pl\aogiri\eventrio\mobile\Event\EventController.class
 pl\aogiri\eventrio\mobile\Comment\Comment.class
 pl\aogiri\eventrio\mobile\Event\EventRepository.class
+pl\aogiri\eventrio\mobile\Tag\TagController.class
 pl\aogiri\eventrio\mobile\Comment\CommentRepository.class
 pl\aogiri\eventrio\mobile\Event\Event.class
 pl\aogiri\eventrio\mobile\Tag\Tag.class

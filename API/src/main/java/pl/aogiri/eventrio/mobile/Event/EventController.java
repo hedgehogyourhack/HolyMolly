@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import pl.aogiri.eventrio.mobile.Tag.Tag;
+import pl.aogiri.eventrio.mobile.Tag.TagRepository;
 import pl.aogiri.eventrio.mobile.User.User;
 import pl.aogiri.eventrio.mobile.User.UserRepository;
 
@@ -20,6 +21,9 @@ public class EventController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private TagRepository tagRepository;
 
     @CrossOrigin("*")
     @RequestMapping(value = "/api/events", method = RequestMethod.GET)
@@ -61,11 +65,14 @@ public class EventController {
     public HttpStatus createEvent(@RequestParam String name, @RequestParam double lat, @RequestParam double lng,
                                   @RequestParam Instant dateBeg, @RequestParam Instant dateEnd,
                                   @RequestParam String address, @RequestParam int status, @RequestParam Boolean publi,
-                                  @RequestParam String description, @RequestParam Long user, @RequestParam List<Tag> tags,
+                                  @RequestParam String description, @RequestParam Long user, @RequestParam List<Long> tags,
                                   @RequestParam int lvl) {
         try {
             User organizer = userRepository.findById(user).get();
-            Event event = new Event(name, lat, lng, dateBeg, dateEnd, address, status, publi, description, organizer, tags, lvl);
+            List<Tag> tag=new ArrayList<>();
+            for(Long id : tags)
+                tag.add(tagRepository.findById(id).get());
+            Event event = new Event(name, lat, lng, dateBeg, dateEnd, address, status, publi, description, organizer, tag, lvl);
             eventRepository.save(event);
             return HttpStatus.CREATED;
         } catch (NoSuchElementException x){
