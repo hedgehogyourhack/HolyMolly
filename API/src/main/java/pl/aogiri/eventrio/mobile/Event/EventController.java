@@ -15,10 +15,11 @@ public class EventController {
 
     @CrossOrigin("*")
     @RequestMapping(value = "/api/events", method = RequestMethod.GET)
-    public @ResponseBody Iterable<Event> getEvents() {
+    public Iterable<Event> getEvents() {
         return eventRepository.findAll();
     }
 
+    @CrossOrigin("*")
     @RequestMapping(value = "/api/events/box", method = RequestMethod.GET)
     public List<Event> getEventBox(@RequestParam double N, @RequestParam double E,
                                        @RequestParam double S, @RequestParam double W, String date) {
@@ -32,9 +33,7 @@ public class EventController {
             Instant date_end = event.getDateEnd();
             if(date_beg.isBefore(data) && date_end.isBefore(data)) {
                 event.setStatus(0);
-                //eventRepository.findById(event.getId()).map(event1 -> {
-
-                //});
+                eventRepository.save(event);
             }
             if (lat > S && lat < N && lng > W && lng < E && event.getStatus()!=0)
                 res.add(event);
