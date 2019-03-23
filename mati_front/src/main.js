@@ -12,3 +12,13 @@ new Vue({
         return h(App)
     }
 }).$mount('#app');
+
+$(document).scroll(function() {
+    if (document.location.pathname === '/') {
+        if ($(window).scrollTop() !== 0) {
+            $('.navbar').addClass('scrolled');
+        } else {
+            $('.navbar').removeClass('scrolled');
+        }
+    }
+});

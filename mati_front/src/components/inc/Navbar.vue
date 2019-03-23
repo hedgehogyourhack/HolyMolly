@@ -1,7 +1,7 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" v-bind:class="{'home': homepage}">
+            <div v-bind:class="{'container' : !homepage, 'container-fluid': homepage}">
                 <router-link to="/" class="navbar-brand">Eventrio</router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent"
@@ -15,7 +15,16 @@
                             <router-link to="/" class="nav-link">Home</router-link>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                User
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <router-link to="/auth/register" class="dropdown-item">Register</router-link>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Events
                             </a>
@@ -28,13 +37,14 @@
                 </div>
             </div>
         </nav>
-        <div id="nav-fix"></div>
+        <div id="nav-fix" v-if="!homepage"></div>
     </div>
 </template>
 
 <script>
     export default {
         name: 'navbar',
+        props: ['homepage'],
     }
 </script>
 
@@ -44,8 +54,25 @@
         top: 0;
         width: 100%;
         z-index: 10000;
+        transition: 0.3s all;
+        &.home {
+            background-color: transparent !important;
+            box-shadow: unset !important;
+            .navbar-brand {
+                font-size: 3rem;
+            }
+            &.scrolled {
+                background-color: #0d0d0d !important;
+                box-shadow: 0 4px 2px -2px #0a0a0a !important;
+
+                .navbar-brand {
+                    font-size: 1.5rem;
+                }
+            }
+        }
     }
-    #nav-fix{
+
+    #nav-fix {
         height: 56px;
     }
 </style>
