@@ -60,12 +60,15 @@ public class Event {
     @NotNull
     private int lvl;
 
+    @ManyToMany
+    private List<User> participants;
+
     public Event() {
     }
 
     public Event(Long id, String name, double lat, double lng, Instant dateBeg, Instant dateEnd, String address,
                  int status, Boolean publi, String description, User organizer, List<Tag> tags,
-                 List<Comment> comments, int lvl) {
+                 List<Comment> comments, int lvl, List<User> participants) {
         this.id = id;
         this.name = name;
         this.lat = lat;
@@ -80,6 +83,7 @@ public class Event {
         this.tags = tags;
         this.comments = comments;
         this.lvl = lvl;
+        this.participants=participants;
     }
 
     public Event(String name, double lat, double lng, Instant dateBeg, Instant dateEnd, String address,
@@ -208,5 +212,13 @@ public class Event {
 
     public void setLvl(int lvl) {
         this.lvl = lvl;
+    }
+
+    public List<User> getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(List<User> participants) {
+        this.participants = participants;
     }
 }
