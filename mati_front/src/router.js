@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import adminDashboard from './views/admin/Dashboard.vue';
+import createEvent from './views/CreateEvent.vue';
 import home from './views/Home.vue';
+import events from './views/Events.vue';
 
 Vue.use(Router);
 
@@ -15,9 +16,14 @@ export default new Router({
             component: home,
         },
         {
-            path: '/admin',
-            name: 'home',
-            component: adminDashboard
+            path: '/events',
+            name: 'events',
+            component: events,
+        },
+        {
+            path: '/create',
+            name: 'create event',
+            component: createEvent
         },
     ]
 });
