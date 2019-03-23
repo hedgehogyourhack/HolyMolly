@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class EventController {
@@ -17,6 +18,12 @@ public class EventController {
     @RequestMapping(value = "/api/events", method = RequestMethod.GET)
     public Iterable<Event> getEvents() {
         return eventRepository.findAll();
+    }
+
+    @CrossOrigin("*")
+    @RequestMapping(value = "/api/event",method = RequestMethod.GET)
+    public Optional<Event> getEvent(@RequestParam Long id){
+        return eventRepository.findById(id);
     }
 
     @CrossOrigin("*")
