@@ -29,7 +29,7 @@ public class UserController {
 
     @CrossOrigin("*")
     @RequestMapping(value = "/api/user/create", method = RequestMethod.POST)
-    public Object createUser(@RequestParam String email, @RequestParam String password, @RequestParam String pseudonym,
+    public Object createUser(@RequestBody @RequestParam String password, @RequestParam String email, @RequestParam String pseudonym,
                                  @RequestParam String gender, @RequestParam Instant birthday) {
         try {
             userRepository.findByEmail(email).get();
@@ -52,7 +52,8 @@ public class UserController {
     public Object login(@RequestParam String email, @RequestParam String password) {
         try {
             User user = userRepository.findByEmailAndPassword(email, password).get();
-            return user;
+
+            return tokenRepository.findByUserId(user.getId()).get();
         } catch (NoSuchElementException x) {
             return HttpStatus.CONFLICT;
         }
