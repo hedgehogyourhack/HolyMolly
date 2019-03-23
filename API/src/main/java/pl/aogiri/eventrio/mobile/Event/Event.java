@@ -1,15 +1,16 @@
 package pl.aogiri.eventrio.mobile.Event;
 
 import java.time.Instant;
+import java.util.List;
 
 import com.sun.istack.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import pl.aogiri.eventrio.mobile.Comment.Comment;
+import pl.aogiri.eventrio.mobile.Tag.Tag;
+import pl.aogiri.eventrio.mobile.User.User;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Event {
@@ -45,10 +46,26 @@ public class Event {
     @NotNull
     private Boolean publi;
 
+    private String description;
+
+    @OneToOne
+    private User organizer;
+
+    @OneToMany
+    private List<Tag> tags;
+
+    @OneToMany
+    private List<Comment> comments;
+
+    @NotNull
+    private int lvl;
+
     public Event() {
     }
 
-    public Event(Long id, String name, double lat, double lng, Instant dateBeg, Instant dateEnd, String address, int status, Boolean publi) {
+    public Event(Long id, String name, double lat, double lng, Instant dateBeg, Instant dateEnd, String address,
+                 int status, Boolean publi, String description, User organizer, List<Tag> tags,
+                 List<Comment> comments, int lvl) {
         this.id = id;
         this.name = name;
         this.lat = lat;
@@ -58,9 +75,15 @@ public class Event {
         this.address = address;
         this.status = status;
         this.publi = publi;
+        this.description = description;
+        this.organizer = organizer;
+        this.tags = tags;
+        this.comments = comments;
+        this.lvl = lvl;
     }
 
-    public Event(String name, double lat, double lng, Instant dateBeg, Instant dateEnd, String address, int status, Boolean publi) {
+    public Event(String name, double lat, double lng, Instant dateBeg, Instant dateEnd, String address,
+                 int status, Boolean publi, String description, User organizer, List<Tag> tags, int lvl) {
         this.name = name;
         this.lat = lat;
         this.lng = lng;
@@ -69,6 +92,42 @@ public class Event {
         this.address = address;
         this.status = status;
         this.publi = publi;
+        this.description = description;
+        this.organizer = organizer;
+        this.tags = tags;
+        this.lvl = lvl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public User getOrganizer() {
+        return organizer;
+    }
+
+    public void setOrganizer(User organizer) {
+        this.organizer = organizer;
+    }
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 
     public Long getId() {
@@ -141,5 +200,13 @@ public class Event {
 
     public void setPubli(Boolean publi) {
         this.publi = publi;
+    }
+
+    public int getLvl() {
+        return lvl;
+    }
+
+    public void setLvl(int lvl) {
+        this.lvl = lvl;
     }
 }

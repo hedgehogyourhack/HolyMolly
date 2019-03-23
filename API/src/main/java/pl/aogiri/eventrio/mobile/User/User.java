@@ -1,6 +1,7 @@
 package pl.aogiri.eventrio.mobile.User;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.sun.istack.NotNull;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,27 +23,32 @@ public class User {
 
     private String gender;
 
+    @NotNull
+    private int lvl;
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Instant birthday;
 
     public User() {
     }
 
-    public User(String email, String password, String pseudonym, String gender, Instant birthday) {
+    public User(String email, String password, String pseudonym, String gender, Instant birthday, int lvl) {
         this.email = email;
         this.password = password;
         this.pseudonym = pseudonym;
         this.gender = gender;
         this.birthday = birthday;
+        this.lvl=lvl;
     }
 
-    public User(Long id, String email, String password, String pseudonym, String gender, Instant birthday) {
+    public User(Long id, String email, String password, String pseudonym, String gender, Instant birthday, int lvl) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.pseudonym = pseudonym;
         this.gender = gender;
         this.birthday = birthday;
+        this.lvl=lvl;
     }
 
     public Long getId() {
@@ -91,5 +97,13 @@ public class User {
 
     public void setBirthday(Instant birthday) {
         this.birthday = birthday;
+    }
+
+    public int getLvl() {
+        return lvl;
+    }
+
+    public void setLvl(int lvl) {
+        this.lvl = lvl;
     }
 }
