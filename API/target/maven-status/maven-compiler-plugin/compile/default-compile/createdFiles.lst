@@ -1,0 +1,15 @@
+pl\aogiri\eventrio\mobile\User\User.class
+pl\aogiri\eventrio\mobile\Main.class
+pl\aogiri\eventrio\mobile\User\UserController.class
+pl\aogiri\eventrio\mobile\Token\TokenController.class
+pl\aogiri\eventrio\mobile\Token\TokenRepository.class
+pl\aogiri\eventrio\mobile\Event\EventController.class
+pl\aogiri\eventrio\mobile\Comment\Comment.class
+pl\aogiri\eventrio\mobile\Event\EventRepository.class
+pl\aogiri\eventrio\mobile\Tag\TagController.class
+pl\aogiri\eventrio\mobile\Comment\CommentRepository.class
+pl\aogiri\eventrio\mobile\Event\Event.class
+pl\aogiri\eventrio\mobile\Tag\Tag.class
+pl\aogiri\eventrio\mobile\Token\Token.class
+pl\aogiri\eventrio\mobile\Tag\TagRepository.class
+pl\aogiri\eventrio\mobile\User\UserRepository.class
