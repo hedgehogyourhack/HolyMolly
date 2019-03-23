@@ -77,7 +77,7 @@
                     formData.append('gender', this.gender);
                     formData.append('lvl', 0);
 
-                    fetch('http://10.200.3.218:8080/api/user/create', {
+                    fetch('http://10.200.3.218:8090/api/user/create', {
                         method: 'POST',
                         body: formData,
                     }).then(res => res.json()).then(data => console.log(data));

@@ -37,7 +37,7 @@
         },
         methods: {
             getEvents() {
-                fetch('http://10.200.3.218:8080/api/events')
+                fetch('http://10.200.3.218:8090/api/events')
                     .then(res => res.json()).then(data => this.events = data);
             }
         }

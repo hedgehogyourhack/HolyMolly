@@ -158,7 +158,7 @@
         },
         methods: {
             getTags() {
-                fetch('http://10.200.3.218:8080/api/tags').then(res => res.json()).then(data => this.tags = data);
+                fetch('http://10.200.3.218:8090/api/tags').then(res => res.json()).then(data => this.tags = data);
             },
             addEvent() {
 
@@ -170,7 +170,7 @@
                     this.newEvent.lat = data.features[0].center[1];
 
                     const dateBeg = new Date(this.newEvent.date_beg);
-                    const dateEnd = new Date(this.newEvent.date_beg);
+                    const dateEnd = new Date(this.newEvent.date_end);
 
 
                     const formData = new FormData();
@@ -187,7 +187,7 @@
                     formData.append('lvl', this.newEvent.level);
                     formData.append('status', this.newEvent.status);
 
-                    fetch('http://10.200.3.218:8080/api/events/add', {
+                    fetch('http://10.200.3.218:8090/api/events/add', {
                         method: 'POST',
                         mode: 'no-cors',
                         body: formData,
