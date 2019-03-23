@@ -45,6 +45,21 @@ public class Event {
     @NotNull
     private Boolean publi;
 
+    public Event() {
+    }
+
+    public Event(Long id, String name, double lat, double lng, Instant dateBeg, Instant dateEnd, String address, int status, Boolean publi) {
+        this.id = id;
+        this.name = name;
+        this.lat = lat;
+        this.lng = lng;
+        this.dateBeg = dateBeg;
+        this.dateEnd = dateEnd;
+        this.address = address;
+        this.status = status;
+        this.publi = publi;
+    }
+
     public Event(String name, double lat, double lng, Instant dateBeg, Instant dateEnd, String address, int status, Boolean publi) {
         this.name = name;
         this.lat = lat;
