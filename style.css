@@ -1,0 +1,27 @@
+.description {
+    overflow-y: scroll;
+    min-height: 50px;
+    max-height: 200px;
+}
+.date:focus{
+    box-shadow:0px 0px 5px -1px #F05D4B !important;
+    border: 1px solid #F05D4B !important;
+}
+.description::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+    border-radius: 2px;
+}
+
+.description::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #56032B;
+}
+
+.form-control:focus{
+    box-shadow:0px 0px 5px 0px #56032B;
+    border: 1px solid #56032B;
+}
+.btn.btn-primary{
+    background-color: #99153D !important;
+}
