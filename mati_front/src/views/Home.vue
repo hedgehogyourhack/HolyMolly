@@ -14,7 +14,7 @@
                             Eventrio
                         </p>
                         <p class="h4" style="color: #FF8F54; position: relative; left: 6px;">
-                            Discover events in okolica
+                            Discover events nearby
                         </p>
                         <button class="btn btn-lg btn-primary mt-5">
                             How it works?
@@ -73,28 +73,28 @@
                                 How to use eventrio
                             </h1>
                         </div>
-                        <div class="col-lg-3">
-                            <img src="../assets/slider2.png" class="img-fluid"/>
+                        <div class="col-lg-3 text-center">
+                            <img src="../assets/mockup6.png" class="w-50"/>
                             <p class="text-center mt-3 h4 text-light">
-                                1. Lorem ipsum
+                                1. Login
                             </p>
                         </div>
-                        <div class="col-lg-3">
-                            <img src="../assets/slider1.png" class="img-fluid"/>
+                        <div class="col-lg-3 text-center">
+                            <img src="../assets/mockup5.png" class="w-50"/>
                             <p class="text-center mt-3 h4 text-light">
-                                1. Lorem ipsum
+                                2. Create event
                             </p>
                         </div>
-                        <div class="col-lg-3">
-                            <img src="../assets/slider3.png" class="img-fluid"/>
+                        <div class="col-lg-3 text-center">
+                            <img src="../assets/mockup2.png" class="w-50"/>
                             <p class="text-center mt-3 h4 text-light">
-                                1. Lorem ipsum
+                                3. Join event
                             </p>
                         </div>
-                        <div class="col-lg-3">
-                            <img src="../assets/slider2.png" class="img-fluid"/>
+                        <div class="col-lg-3 text-center">
+                            <img src="../assets/mockup1.png" class="w-50"/>
                             <p class="text-center mt-3 h4 text-light">
-                                1. Lorem ipsum
+                                4. Have fun
                             </p>
                         </div>
                     </div>
@@ -110,12 +110,12 @@
                 <div class="col-lg-2 text-center pricing ml-auto">
                     <i class="bx bx-book display-1"></i>
                     <p class="h1 pb-3">
-                        Pleps
+                        Standard
                         <span class="pin free">Always Free</span>
                     </p>
                     <ul class="text-left">
                         <li>
-                            Join up to <strong>50</strong> events /month
+                            Join up to <strong>6 0</strong> events /month
                         </li>
                         <li>
                             Get <strong>notifications</strong> about <strong>upcoming</strong> events
@@ -148,7 +148,7 @@
                 <div class="col-lg-2 text-center pricing ml-auto">
                     <i class="bx bx-book display-1"></i>
                     <p class="h1 pb-3">
-                        Pleps
+                        Standard
                         <span class="pin free">Free</span>
                     </p>
                     <ul class="text-left">

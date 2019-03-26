@@ -112,7 +112,7 @@
                                     Public
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-primary" @click="addEvent()">Submit</button>
+                            <button type="submit" class="btn btn-primary" @click="addEvent()">Create event</button>
 
                         </div>
                     </div>
